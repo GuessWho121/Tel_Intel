@@ -1,6 +1,6 @@
 services:
   sparkmaster:
-    image: apache/spark:latest
+    image: apache/spark:4.1.2
     container_name: sparkmaster
     environment:
       - SPARK_PUBLIC_DNS=100.71.201.92
@@ -8,5 +8,8 @@ services:
     ports:
       - "7077:7077"
       - "8080:8080"
+      - "10000:10000"
+      - "10001:10001"
+      - "4040:4040"
     volumes:
-      - ./scripts:/opt/scripts
+      - ../:/opt/airtel/Sproj
