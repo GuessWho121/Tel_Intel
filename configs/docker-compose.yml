@@ -1,0 +1,12 @@
+services:
+  sparkmaster:
+    image: apache/spark:latest
+    container_name: sparkmaster
+    environment:
+      - SPARK_PUBLIC_DNS=100.71.201.92
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master --host 0.0.0.0 --port 7077
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+    volumes:
+      - ./scripts:/opt/scripts
