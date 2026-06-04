@@ -3,4 +3,3 @@ pyyaml
 pandas
 pyarrow
 pytest
-pyyaml

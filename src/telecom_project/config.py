@@ -1,16 +1,16 @@
 from pathlib import Path
-import json
+import yaml
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_CLUSTER_CONFIG = PROJECT_ROOT / "configs" / "cluster.json"
+DEFAULT_CLUSTER_CONFIG = PROJECT_ROOT / "configs" / "cluster.yaml"
 
-def load_json(path: str | Path) -> dict:
+def load_yaml(path: str | Path) -> dict:
     path = Path(path)
     with path.open("r", encoding="utf-8") as file:
-        return json.load(file)
-    
+        return yaml.safe_load(file)
+
 def load_cluster_config(path: str | Path = DEFAULT_CLUSTER_CONFIG) -> dict:
-    config = load_json(path)
+    config = load_yaml(path)
     required_sections = ["spark", "minio", "iceberg", "storage"]
 
     for section in required_sections:
