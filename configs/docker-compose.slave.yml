@@ -6,8 +6,8 @@ x-minioconf: &minioconf
     - MINIO_ROOT_PASSWORD=pass1234
 
 x-sparkworker: &sparkworker
-  image: apache/spark:4.1.2
-  command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://100.64.236.51:7077 --cores 1 --memory 1G --webui-port 8081 #Change Master IP
+  image: airtel-spark:4.1.2-lakehouse
+  command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://100.71.201.92:7077 --cores 1 --memory 1G --webui-port 8081 #Change Master IP
   
 services:
   minio1:

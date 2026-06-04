@@ -1,6 +1,6 @@
 services:
   sparkmaster:
-    image: apache/spark:4.1.2
+    image: airtel-spark:4.1.2-lakehouse
     container_name: sparkmaster
     environment:
       - SPARK_PUBLIC_DNS=100.71.201.92
