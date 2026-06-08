@@ -28,4 +28,7 @@ docker exec `
     --conf spark.driver.port=10000 `
     --conf spark.driver.bindAddress=0.0.0.0 `
     --conf spark.blockManager.port=10001 `
+    --conf spark.executor.memory=1024m `
+    --conf spark.executor.cores=1 `
+    --conf spark.cores.max=3 `
     $ContainerJobPath

@@ -2,7 +2,7 @@ from pathlib import Path
 import yaml
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_CLUSTER_CONFIG = PROJECT_ROOT / "configs" / "cluster.yaml"
+DEFAULT_CLUSTER_CONFIG = PROJECT_ROOT / "configs" / "cluster.yml"
 
 def load_yaml(path: str | Path) -> dict:
     path = Path(path)
