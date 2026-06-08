@@ -59,7 +59,7 @@ services:
     container_name: hive
     hostname: hive
     environment:
-      - DB_DRIVER=postgresql
+      - DB_DRIVER=postgres
       - SERVICE_NAME=metastore
       - SERVICE_OPTS >-
         -Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver
