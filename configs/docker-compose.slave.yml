@@ -43,6 +43,8 @@ services:
 
   postgres:
     image: postgres:16
+    container_name: postgres
+    hostname: postgres
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: pass1234
@@ -54,6 +56,8 @@ services:
 
   hive:
     image: apache/hive:4.0.0
+    container_name: hive
+    hostname: hive
     environment:
       - DB_DRIVER=postgresql
       - SERVICE_NAME=metastore
