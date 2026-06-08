@@ -41,6 +41,32 @@ services:
     ports:
       - 8083:8081
 
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: pass1234
+      POSTGRES_DB: metastore
+    ports:
+      - 5432:5432
+    volumes:
+      - hive_metastore_db:/var/lib/postgresql/data
+
+  hive:
+    image: apache/hive:4.0.0
+    environment:
+      - DB_DRIVER=postgresql
+      - SERVICE_NAME=metastore
+      - SERVICE_OPTS >-
+        -Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver
+        -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres-metastore:5432/metastore
+        -Djavax.jdo.option.ConnectionUserName=hive
+        -Djavax.jdo.option.ConnectionPassword=hive
+    ports:
+      - 9083:9083
+    depends_on:
+      - postgres
+
 volumes:
   s31:
-
+  hive_metastore_db:

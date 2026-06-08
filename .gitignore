@@ -1,3 +1,47 @@
+﻿# Local environment and secrets
 .env
-.venv
-**/__pycache__/**
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Spark and local data artifacts
+spark-warehouse/
+metastore_db/
+derby.log
+*.crc
+_SUCCESS
+**/_SUCCESS
+**/.spark-staging/
+**/_temporary/
+data/raw/
+data/bronze/
+data/silver/
+data/gold/
+data/checkpoints/
+data/warehouse/
+models/
+
+# Logs and runtime files
+*.log
+logs/
+tmp/
+temp/
+
+# IDE/editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
