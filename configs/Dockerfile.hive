@@ -1,0 +1,8 @@
+FROM apache/hive:4.0.0
+
+USER root
+
+RUN curl -L -o /opt/hive/lib/postgresql-42.7.4.jar \
+    https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.4/postgresql-42.7.4.jar
+
+USER hive

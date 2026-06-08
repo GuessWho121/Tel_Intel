@@ -4,7 +4,6 @@
 !.env.example
 .venv/
 venv/
-env/
 
 # Python
 __pycache__/
@@ -15,7 +14,6 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .coverage
-htmlcov/
 
 # Spark and local data artifacts
 spark-warehouse/
@@ -39,9 +37,3 @@ models/
 logs/
 tmp/
 temp/
-
-# IDE/editor and OS files
-.idea/
-.vscode/
-.DS_Store
-Thumbs.db

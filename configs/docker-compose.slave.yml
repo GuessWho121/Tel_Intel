@@ -55,7 +55,7 @@ services:
       - hive_metastore_db:/var/lib/postgresql/data
 
   hive:
-    image: apache/hive:4.0.0
+    image: airtel-hive:4.0.0-metastore
     container_name: hive
     hostname: hive
     environment:
@@ -63,9 +63,9 @@ services:
       SERVICE_NAME: metastore
       SERVICE_OPTS: >
         -Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver
-        -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres-metastore:5432/metastore
-        -Djavax.jdo.option.ConnectionUserName=hive
-        -Djavax.jdo.option.ConnectionPassword=hive
+        -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres:5432/metastore
+        -Djavax.jdo.option.ConnectionUserName=admin
+        -Djavax.jdo.option.ConnectionPassword=pass1234
     ports:
       - 9083:9083
     depends_on:
