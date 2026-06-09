@@ -66,7 +66,7 @@ services:
         -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres:5432/metastore
         -Djavax.jdo.option.ConnectionUserName=admin
         -Djavax.jdo.option.ConnectionPassword=pass1234
-        -Dfs.s3a.endpoint=http://100.64.236.51:9000
+        -Dfs.s3a.endpoint=http://minio1:9000
         -Dfs.s3a.access.key=admin
         -Dfs.s3a.secret.key=pass1234
         -Dfs.s3a.aws.credentials.provider=org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider
