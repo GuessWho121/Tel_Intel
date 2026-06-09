@@ -29,6 +29,9 @@ def create_spark_session(app_name: str) -> SparkSession:
         config("spark.sql.warehouse.dir", hive_cfg["warehouse_location"]).\
         config("spark.hadoop.hive.metastore.uris", hive_cfg["metastore_uri"]).\
         config("hive.metastore.uris", hive_cfg["metastore_uri"]).\
+        config("spark.hadoop.fs.s3a.aws.credentials.provider", "org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider").\
+        config("spark.hadoop.fs.s3a.endpoint.region", "us-east-1").\
+        config("spark.hadoop.fs.s3a.change.detection.mode", "none").\
         enableHiveSupport()
         # config("spark.sql.catalog.telecom.uri", hive_cfg["metastore_uri"]).\
     

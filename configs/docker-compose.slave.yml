@@ -69,7 +69,7 @@ services:
         -Dfs.s3a.endpoint=http://100.64.236.51:9000
         -Dfs.s3a.access.key=admin
         -Dfs.s3a.secret.key=pass1234
-        -DF.s3a.aws.credentials.provider=org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider
+        -Dfs.s3a.aws.credentials.provider=org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider
         -Dfs.s3a.path.style.access=true
         -Dfs.s3a.connection.ssl.enabled=false
         -Dfs.s3a.change.detection.mode=none
