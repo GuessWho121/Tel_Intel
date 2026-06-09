@@ -74,6 +74,7 @@ services:
         -Dfs.s3a.connection.ssl.enabled=false
         -Dfs.s3a.change.detection.mode=none
         -Dfs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem
+        -Dfs.s3a.endpoint.region=us-east-1
     ports:
       - 9083:9083
     depends_on:
