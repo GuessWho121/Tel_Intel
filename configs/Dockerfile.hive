@@ -10,7 +10,7 @@ RUN curl -L -o /opt/hive/lib/postgresql-42.7.4.jar \
 RUN curl -L -o /opt/hive/lib/hadoop-aws-3.3.6.jar \
     https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.6/hadoop-aws-3.3.6.jar
 
-RUN curl -L -o /opt/hive/lib/aws-sdk-v2-bundle-1.12.367.jar \
+RUN curl -L -o /opt/hive/lib/aws-java-sdk-bundle-1.12.367.jar \
      https://repo1.maven.org/maven2/software/amazon/awssdk/bundle/1.12.367/bundle-1.12.367.jar
 
 USER hive
