@@ -7,7 +7,8 @@ def create_spark_session(app_name: str) -> SparkSession:
 
     spark_cfg = config["spark"]
     minio_cfg = config["minio"]
-    # iceberg_cfg = config["iceberg"]
+    iceberg_cfg = config["iceberg"]
+    hive_cfg = config["hive"]
 
     access_key = os.getenv(minio_cfg["access_key_env"])
     secret_key = os.getenv(minio_cfg["secret_key_env"])
@@ -24,7 +25,12 @@ def create_spark_session(app_name: str) -> SparkSession:
         config("spark.hadoop.fs.s3a.path.style.access", str(minio_cfg["path_style_access"]).lower()).\
         config("spark.hadoop.fs.s3a.connection.ssl.enabled", str(minio_cfg["ssl_enabled"]).lower()).\
         config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem").\
-        config("spark.sql.adaptive.enabled", "true")
-
+        config("spark.sql.adaptive.enabled", "true").\
+        config("spark.sql.warehouse.dir", hive_cfg["warehouse_location"]).\
+        config("spark.hadoop.hive.metastore.uris", hive_cfg["metastore_uri"]).\
+        config("hive.metastore.uris", hive_cfg["metastore_uri"]).\
+        enableHiveSupport()
+        # config("spark.sql.catalog.telecom.uri", hive_cfg["metastore_uri"]).\
+    
     return sparkbuild.getOrCreate()
         

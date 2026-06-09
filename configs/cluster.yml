@@ -17,10 +17,13 @@ minio:
 
 iceberg:
     catalog_name: "telecom"
-    warehouse_location: "s3a://airtel-spark/warehouse"
+    warehouse_location: "s3a://airtel-spark/warehouse/iceberg"
 
+hive:
+    metastore_uri: "thrift://100.64.236.51:9083"
+    warehouse_location: "s3a://airtel-spark/warehouse/hive"
 
 storage:
     raw: "s3a://airtel-spark/raw"
-    checkpoints: "s3a://airtel-spark/checkpoint"
+    checkpoints: "s3a://airtel-spark/checkpoints"
     models: "s3a://airtel-spark/models"
